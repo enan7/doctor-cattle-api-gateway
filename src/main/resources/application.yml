@@ -16,4 +16,23 @@ spring:
     name: Api-Gateway
 
 server:
-  port: 9191
+  port: 9191 
+
+security:
+  user:
+    password: ${eureka.password}
+    
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: ${EUREKA_URL:http://user:password@localhost:8761}/eureka/
+  instance:
+    hostname: ${DOMAIN_NAME}
+  password: ${USER_PASSWORD:password}
+   #http://localhost:8761/eureka
+     
+  
