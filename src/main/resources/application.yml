@@ -14,7 +14,7 @@ spring:
           
   application:
     name: Api-Gateway
-
+  profiles: heroku
 
 security:
   user:
