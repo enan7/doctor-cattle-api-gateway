@@ -12,9 +12,9 @@ spring:
         predicates:
         - Path= /api/cattle-service/**
           
-#  application:
-#    name: Api-Gateway
-#
+  application:
+    name: Api-Gateway
+
 #server:
 #  port: 9191 
 
@@ -27,7 +27,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     serviceUrl:
-      defaultZone: ${EUREKA_URL:http://user:password@localhost:8761}/eureka/
+      defaultZone: ${EUREKA_URL:https://doctor-cattle-parent.herokuapp.com}/eureka/
   instance:
     hostname: ${DOMAIN_NAME:API_GATEWAY}
   password: ${USER_PASSWORD:password}
