@@ -12,11 +12,11 @@ public class SpringCloudConfig {
 	    public RouteLocator gatewayRoutes(RouteLocatorBuilder builder) {
 	        return builder.routes()
 	                .route(r -> r.path("/api/customer-service/**")
-	                        .uri("lb://CUSTOMER-SERVICE")
+	                        .uri("https://doctor-cattle-customer-service.herokuapp.com/")
 	                        )
 
 	                .route(r ->r.path("/api/cattle-service/**")
-	                        .uri("lb://CATTLE-SERVICE")
+	                        .uri("https://doctor-cattle-cattle-service.herokuapp.com/")
 	                        )
 	                .build();
 	    }
