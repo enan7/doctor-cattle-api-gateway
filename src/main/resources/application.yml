@@ -1,0 +1,27 @@
+server:
+  port: 9191
+  
+spring:
+ application:
+    name: Api-Gateway
+ cloud:
+    gateway:
+      routes:
+      - id: CUSTOMER-SERVICE
+        uri: lb://CUSTOMER-SERVICE
+        predicates:
+        - Path= /api/customer-service/**
+
+      - id: CATTLE-SERVICE
+        uri: lb://CATTLE-SERVICE
+        predicates:
+        - Path= /api/cattle-service/**
+        
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: https://doctor-cattle-parent.herokuapp.com/eureka/
+  instance:
+    hostname: localhost
